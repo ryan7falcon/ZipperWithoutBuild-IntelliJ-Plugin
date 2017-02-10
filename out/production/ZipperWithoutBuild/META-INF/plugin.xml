@@ -1,0 +1,38 @@
+<idea-plugin version="2">
+  <id>com.your.company.unique.plugin.id</id>
+  <name>Plugin display name here</name>
+  <version>1.0</version>
+  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+  <description><![CDATA[
+     Creates a zip folder in project directory with all the files of the project, except for build folders<br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Used Zipper as a starting point, excluded build folders from being added to zip folder
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="145.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="ZipperAction.Id" class="ZipperAction" text="Export to _Zip..."
+            description="Export project to zip file, exclude build folders">
+      <add-to-group group-id="FileMenu" anchor="after" relative-to-action="SaveAll"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt Z"/>
+    </action>
+  </actions>
+
+</idea-plugin>
